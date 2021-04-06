@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ES11 Promise.allSettled</title>
+</head>
+<body>
+ 
+ <script>
+  //聲明兩個promise對象
+  const p1 = new Promise((resolve,reject)=>{
+   setTimeout(() => {
+    resolve('商品數據-1');
+   }, 1000);
+  })
+
+  const p2 = new Promise((resolve,reject)=>{
+   setTimeout(() => {
+    resolve('商品數據-2');
+    // reject('出錯啦');
+   }, 1000);
+  })
+
+  //調用 allSettled 方法
+  const result = Promise.allSettled([p1,p2]) //一定返回成功的promise結果裡面分別有成功或失敗的子promise
+  // const result = Promise.all([p1,p2])  //只有在子promise都成功才可以回傳promise
+
+  console.log(result)
+ </script>
+</body>
+</html>

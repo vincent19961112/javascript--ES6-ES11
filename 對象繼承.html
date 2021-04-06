@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>對象繼承</title>
+</head>
+<body>
+ 
+ <script>
+  //手機
+  function Phone(brand,price){
+   this.brand = brand;
+   this.price = price;
+  }
+
+  Phone.prototype.call = function(){
+   console.log('我可以打電話')
+  }
+
+  //智能手機
+  function smartPhone(brand,price,color,size){
+   Phone.call(this, brand, price);
+   this.color = color;
+   this.size = size;
+  }
+
+  //設置子級構造函數的原型
+  smartPhone.prototype = new Phone;
+  smartPhone.prototype.constructor = smartPhone;
+
+  //聲明子類的方法
+  smartPhone.prototype.photo = function(){
+   console.log('我可以拍照');
+  }
+  smartPhone.prototype.playGame = function(){
+   console.log('我可以玩遊戲')
+  }
+ 
+  const chuizi = new smartPhone("鎚子",2499,"黑色","5.5inch");
+
+  console.log(chuizi)
+ </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ES11 可選鏈操作符</title>
+</head>
+<body>
+ 
+ <script>
+  // ?.
+  function main(config){
+    // const dbhost = config.db.host;  //Uncaught TypeError: Cannot read property 'db' of undefined
+    // const dbhost = config && config.db && config.db.host;
+    //同上判斷
+    const dbhost = config?.db?.host;
+    console.log(dbhost)
+  }
+
+  main({
+   db: {
+    host:'192.168.1.100',
+    username: 'root'
+   },
+   cache: {
+    host: '192.168.1.200',
+    username: 'admin'
+   }
+  })
+ </script>
+</body>
+</html>

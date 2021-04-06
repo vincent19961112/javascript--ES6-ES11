@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>class類</title>
+</head>
+<body>
+ 
+ <script>
+  //ES6 提供了更加接近傳統語言的寫法，引用了 Class (類)這個概念，作為對象的模板，通過class關鍵字，可以定義類，基本上，ES6的class可以看作只是一個語法糖，ES5都可以做到，新的class寫法只是扯對象原型的寫法更加清晰，更像面向對象編程的語法而已
+  // 1) class 聲明類
+  // 2) constructor 定義構造函數初始化
+  // 3) extends 繼承父類
+  // 4) super 調用父級構造方法
+  // 5) static 定義靜態方法和屬性
+  // 6) 父類方法可以重寫
+
+  //手機
+  function Phone(brand,price){
+   this.brand = brand;
+   this.price = price;
+  }
+
+  //添加方法
+  Phone.prototype.call = function(){
+   console.log('我可以打電話!!')
+  }
+
+  //實例化對象
+  let Huawei = new Phone("華韋",5999);
+  Huawei.call();  //我可以打電話!!
+  console.log(Huawei);  //Phone {brand: "華韋", price: 5999}
+
+  //class
+  // class Phone{
+   //構造函數方法，名字不能修改
+   // constructor(brand,price){
+   //  this.brand = brand;
+   //  this.price = price;
+   // }
+
+   //方法必須使用該語法，不能使用 ES5 的對象完整刑式
+  //  call(){
+  //   console.log('我可以打電話!!')
+  //  }
+  // }
+
+  // let onePlus = new Phone('1+',1999);
+  // onePlus.call()  //我可以打電話!!
+  // console.log(onePlus) //Phone {brand: "1+", price: 1999}
+ </script>
+</body>
+</html>

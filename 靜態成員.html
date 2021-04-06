@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>靜態成員</title>
+</head>
+<body>
+ 
+ <script>
+  // function Phone(){
+
+  // }
+  // Phone.name = '手機';
+  // Phone.change = function(){
+  //  console.log("我可以改變世界");
+  // }
+  // Phone.prototype.size = '5.5inch';
+
+  // let nokie = new Phone();
+
+  // console.log(nokie.name)  //undefined
+  // // nokie.change()  //Uncaught TypeError: nokie.change is not a function
+  // console.log(nokie.size)  //5.5inch
+
+  class Phone{
+   //靜態屬性
+   static name = '手機';
+   static change(){
+    console.log('我可以改變世界');
+   }
+  }
+
+  let nokie = new Phone();
+  console.log(nokie.name); //undefined
+  console.log(Phone.name); //手機
+  //static 標註的屬性和方法，只屬於類不屬於實例對象
+ </script>
+</body>
+</html>

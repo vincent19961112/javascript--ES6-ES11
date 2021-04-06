@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>對象方法擴展</title>
+</head>
+<body>
+ 
+ <script>
+  //1. Object.is 判斷兩個值是否完全相同
+  console.log(Object.is(NaN,NaN)); // true 有點像 ===
+  console.log(NaN === NaN); // false
+  //2. Object.assign 對象的合併
+  const config1 = {
+   host: 'localhost',
+   port: 3306,
+   name: 'root',
+   pass: 'root',
+   test: 'test'
+  };
+
+  const config2 = {
+   host: 'http://atguigu.com',
+   port: 33060,
+   name: 'atguigu.com',
+   pass: 'iloveyou'
+  }
+
+  console.log(Object.assign(config1, config2)) //後面會覆蓋前面的對象
+
+  //3. Object.setPrototypeOf Object.gtPrototypeof 
+  const school = {
+   name: '虎尾'
+  }
+  const cities = {
+   xiaoqu: ['雲林','台北','高雄']
+  }
+  Object.setPrototypeOf(school, cities); //設置原型
+  console.log(Object.getPrototypeOf(school)) //獲取原型
+  console.log(school)
+
+ </script>
+</body>
+</html>

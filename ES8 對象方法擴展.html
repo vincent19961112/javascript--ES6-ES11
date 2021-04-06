@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ES8 對象方法擴展</title>
+</head>
+<body>
+ 
+ <script>
+  //聲明對象
+  const school = {
+   name:'許鐸鐙',
+   cities:['台北','桃園','高雄'],
+   xueka:['前端','Java','大數據','運維']
+  }
+  //獲取對象所有的鍵
+  // console.log(Object.keys(school))
+  //獲取對象所有的值
+  // console.log(Object.values(school))
+  //entries
+  // console.log(Object.entries(school))  //[Array(2), Array(2), Array(2)]
+  //創建 Map
+  // const m = new Map(Object.entries(school));
+  // console.log(m.get('cities'));  //["台北", "桃園", "高雄"]
+
+  // console.log(Object.getOwnPropertyDescriptors(school));
+
+  // const obj = Object.create(null, {
+  //  name: {
+  //   //設置值
+  //   value: '許鐸鐙',
+  //   //屬性特性
+  //   writable: true,
+  //   configurable: true,
+  //   enumerable: true
+  //  }
+  // });
+ </script>
+</body>
+</html>

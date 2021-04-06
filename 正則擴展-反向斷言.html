@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>正則擴展-反向斷言</title>
+</head>
+<body>
+ 
+ <script>
+  //聲明字符串
+  let str = 'JS5211314你知道嗎555拉拉拉';
+
+  //正向斷言
+  // const reg = /\d+(?=拉)/;
+  // const result = reg.exec(str);
+
+  //反向斷言
+  const reg = /(?<=嗎)\d+/;
+  const result = reg.exec(str);
+  console.log(result);
+ </script>
+</body>
+</html>

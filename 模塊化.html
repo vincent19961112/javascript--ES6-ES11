@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>模塊化</title>
+</head>
+<body>
+ 
+ <!-- 模塊化是指一個大的程序文件，拆分成許多小的文件，然後將小文件組合起來 -->
+
+ <!-- 模塊化的好處 -->
+
+ <!-- 模塊化的優勢有以下幾點 -->
+ <!-- 1. 防止命名衝突 -->
+ <!-- 2. 代碼複用 -->
+ <!-- 3. 高維護性 -->
+
+ <!-- 模塊化規範產品 -->
+ <!-- 1. CommonJS => NodeJS、 Browserify -->
+ <!-- 2.AMD => requireJS -->
+ <!-- 3.CMD => seaJS -->
+
+ <!-- ES6 模塊化語法 -->
+ <!-- 模塊功能主要由兩個命名構成: export 和import  -->
+
+ <script type="module">
+  //引入 m1.js 模塊內容
+  //1. 通用的導入方式
+  // import * as m1 from "./js/m1.js";
+  // import * as m2 from "./js/m2.js";
+  // import * as m3 from "./js/m3.js";
+  //2. 解構賦值的形式
+  // import { school,teach } from "./js/m1.js";
+  // console.log(school,teach);
+  // import { school as guigu,findJob } from "./js/m2.js";
+  // console.log(guigu,findJob);
+  // import { default as m3 } from "./js/m3.js";
+  // console.log(m3)
+ 
+  //3. 簡便形式 針對默認暴露
+  // import m3 from './js/m3.js';
+  // console.log(m3)
+ 
+  // console.log(m1)
+  // console.log(m2)
+  // console.log(m3)
+  // console.log(m1.school)  //許鐸鐙
+  // console.log(m2.school)  //許鐸鐙m2
+  // console.log(m3.default.school)  //許鐸鐙m2
+  // m1.teach()  //我們可以教給你開發技能
+  // m2.findJob()  //我可以幫你找工作!!!
+  // m3.default.change()  //我可以幫你找工作!!!
+ </script>
+ <script src="./js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ES10 Object.fromEntries</title>
+</head>
+<body>
+ 
+ <script>
+  //二維數組
+  const result = Object.fromEntries([
+   ['name','尚硅谷'],
+   ['xueke','java,大數據,前端,雲計算']
+  ]);  // 將二維數組轉換為對象
+
+  //Map
+  const m = new Map();
+  m.set("name","ATGUIGU");
+  const result = object.fromEntries(m);
+
+  //Object.entries ES8
+  const arr = {
+   name: '尚硅谷'
+  }
+  Object.entries(arr);  //將對象轉換為二維數組
+ </script>
+</body>
+</html>

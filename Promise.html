@@ -8,5 +8,30 @@
 </head>
 <body>
  
+ <script>
+  //promise是ES6引用的異步編程的新解決方案，語法上promise是一個構造函數，用來封裝異步操作並可以獲取成功或失敗的結果。
+  // 1)Promise 構造函數:Promise(excutor){}
+  // 2)Promise.prototype.then 方法
+  // 3)Promise.prototype.catch 方法
+
+  //實例化 Promise 對象
+  const p = new Promise(function(resolve, reject){
+   setTimeout(() => {
+    //
+    let data = '數據庫中的用戶數據';
+    //resolve
+    resolve(data);
+    let err = '數據獲取失敗';
+    reject(err);
+   }, 1000);
+  });
+
+  //調用 promise 對象的 then 方法
+  p.then(function(value){
+   console.log(value)
+  },function(reason){
+   console.log(reason)
+  })
+ </script>
 </body>
 </html>

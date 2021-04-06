@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>正則擴展-命名捕獲分組</title>
+</head>
+<body>
+ 
+ <script>
+  //聲明一個字符串
+  // let str = '<a href="http://www.atguigu.com">尚硅谷</a>'
+
+  //提取 url 與 [標籤文本]
+  // const reg = /<a href="(.*)">(.*)<\/a>/;
+
+  //執行
+  // const result = reg.exec(str);
+
+  // console.log(result)
+  // console.log(result[1])  //http://www.atguigu.com
+  // console.log(result[2])  //尚硅谷
+
+  let str = '<a href="http://www.atguigu.com">尚硅谷</a>'
+
+  const reg = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;
+
+   const result = reg.exec(str);
+
+   console.log(result)  //多了 groups: {url: "http://www.atguigu.com", text: "尚硅谷"}
+   console.log(result.groups.url)
+   console.log(result.groups.text)
+ </script>
+</body>
+</html>

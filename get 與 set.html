@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>get 與 set</title>
+</head>
+<body>
+ 
+ <script>
+  //get 與 set
+  class Phone{
+   //常用在動態屬性封裝，比如總數、平均數
+   get price(){
+    console.log("價格屬性被讀取了");
+    return 'Iloveyou'
+   }
+   //添加更多的控制和判斷，成功赋值，失敗不赋值
+   set price(newVal){
+    console.log("價格屬性被修改了")
+   }
+  }
+
+  let s = new Phone();
+
+  // console.log(s.price) //Iloveyou
+  s.price = 'free';
+ </script>
+</body>
+</html>

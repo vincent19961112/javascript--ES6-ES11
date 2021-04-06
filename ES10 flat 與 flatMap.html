@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>ES10 flat 與 flatMap</title>
+</head>
+<body>
+ 
+ <script>
+  //flat
+  //將多維數組轉化為低位數組
+  //const arr = [1,2,3,4,[5,6]]
+  // const arr = [1,2,3,4,[5,6,[7,8,9]]];
+  //參數為深度 是一個數字
+
+  // console.log(arr) //[1, 2, 3, 4, Array(3)]
+  // console.log(arr.flat(1)) //[1, 2, 3, 4, 5, 6, Array(3)]
+  // console.log(arr.flat(2)) //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  //flatMap
+  const arr = [1,2,3,4];
+  const result = arr.flatMap(item=> [item * 10])
+  console.log(result) //原本二維展開變一維[10, 20, 30, 40]
+ </script>
+</body>
+</html>

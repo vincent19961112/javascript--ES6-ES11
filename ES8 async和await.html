@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>async 和 await</title>
+</head>
+<body>
+ 
+ <script>
+  //async 和 await 兩種語法結合可以扯異步代碼像同步代碼一樣
+  // 1. async 函數的返回值為promise對象
+  // 2. promise 對象的結果由async 函數執行的返回值作決定
+
+  //async 函數
+  // async function fn(){
+   // 返回一個字符串
+   // return '許鐸鐙';
+   // 返回的結果不是一個 Promise 類型的對象
+   // return;
+   // 拋出錯誤，返回的結果是一個失敗的Promise
+   // throw new Error("出錯啦!");
+   // 返回的結果如果是一個Promise 對象
+   // return new Promise((resolve,reject)=>{
+   //  resolve("成功的數據");
+    // reject("失敗的錯誤");
+  //  })
+  // }
+
+  // const result = fn();
+
+  // console.log(result) //成功的 Promise 對象
+
+  // result.then(value=>{
+  //  console.log(value)
+  // },reason=>{
+  //  console.log(reason)
+  // })
+
+  //await 表達式
+  //1. await必須寫在async函數中
+  //2. await右側的表達式一般為promise對象
+  //3. await返回的是promise成功的值
+  //4. await的promise失敗了，就會拋出異常，需要通過try...catch捕獲處理
+
+  //創建 promise 對象
+  const p = new Promise((resolve,reject)=>{
+   // resolve("成功的值");
+   reject("失敗了")
+  })
+  // await 要放在 async 函數中
+  async function main(){
+   try {
+    let result = await p;
+    console.log(result);
+   } catch (error) {
+    console.log(error)
+   }
+  }
+  main();  //成功的值
+ </script>
+</body>
+</html>
