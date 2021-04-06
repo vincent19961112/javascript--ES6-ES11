@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>箭頭函數</title>
+</head>
+<body>
+ <script>
+  // ES6 允許使用[箭頭] (=>) 定義函數
+  //聲明一個函數
+  // let fn = function(){
+
+  // }
+  // 同上
+  // let fn = (a,b) => {
+  //  return a + b;
+  // }
+  //調用函數
+  // let result = fn(1, 2);
+  // console.log(result)  //3
+  //1. this 是靜態的. this 始終指向函數聲明時所在作用域下的 this 的值
+  // function getName(){
+  //  console.log(this.name);
+  // }
+  // let getName2 = () =>{
+  //  console.log(this.name);
+  // }
+  // window.name = '許鐸鐙';
+  // const school = {
+  //  name: "VINCENT"
+  // }
+  //直接調用
+  // getName(); //許鐸鐙
+  // getName2(); //許鐸鐙
+
+  //call 方法調用
+  // getName.call(school); //VINCENT
+  // getName2.call(school); //許鐸鐙
+
+  //2. 不能作為構造函數
+  // let Person = (name,age) => {
+  //  this.name = name;
+  //  this.age = age;
+  // }
+  // let me = new Person('xiao', 30);
+  // console.log(me); //Uncaught TypeError: Person is not a constructor
+  //3. 不能使用 arguments 變量
+  // let fn = () =>{
+  //  console.log(arguments);
+  // }
+  // fn(1,2,3); //Uncaught ReferenceError: arguments is not defined
+  //4. 箭頭函數的簡寫
+   //1) 省略小括號，當參數只有一個時候
+   // let add = n => {
+   //  return n + n;
+   // }
+   // console.log(add(9))
+   //2) 省略花括號，當代碼體只有一條語句的時候，此時 return 必須省略
+   //而且語句的執行結果就是函數的返回值
+   // let pow = (n) => n*n;
+   // console.log(pow(9))
+ </script>
+</body>
+</html>

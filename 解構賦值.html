@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>解構賦值</title>
+</head>
+<body>
+ <script>
+  // ES6 允許按照一定模式從數組和對象中提取值，對變量進行賦值。
+  // 這被稱為解構賦值
+  // 1. 數組的結構
+  // const F4 = ['vincent','許鐸鐙','照寫邀','李小龍'];
+  // let [a,b,c,d] = F4;
+  // console.log(a);
+  // console.log(b);
+  // console.log(c);
+  // console.log(d);
+  // 2. 對象的解構
+  const zhao = {
+   name: '趙本山',
+   age: '不詳',
+   xiaopin: function(){
+    console.log("我可以演小品");
+   }
+  }
+  let {name,age,xiaopin} = zhao;
+  console.log(name)
+  console.log(age)
+  console.log(xiaopin)
+ </script>
+</body>
+</html>

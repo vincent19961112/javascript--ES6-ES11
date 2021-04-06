@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>擴展運算符應用</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+
+<script>
+ //1. 數組的合併
+ // const kuaizi = ['王泰利','消央'];
+ // const fenghuang = ['曾殺','零花'];
+ // const zuixuan = kuaizi.concat(fenghuang);// ['王泰利','消央','曾殺','零花']
+ // const auizuan1 = [...kuaizi,...fenghuang];// 同上
+ //2. 數組的clone
+ // const sanzhihua = ['E','G','M'];
+ // const sanyecao = [...sanzhihua];  // ['E','G','M'] 淺拷貝
+ // console.log(sanyecao);//  ['E','G','M']
+
+ //3. 將偽數組變數組
+ const divs = document.querySelector('div')
+ console.log(divs) //是一個對象
+ const divArr = [...divs];  //變成一個數組
+ console.log(divArr);
+</script>
+</html>

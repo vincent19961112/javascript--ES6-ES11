@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>let 實踐</title>
+</head>
+<style>
+ .item{
+  display: block;
+  float: left;
+  margin-right: 10px;
+  height: 250px;
+  width: 250px;
+  border: 2px solid black;
+ }
+</style>
+<body>
+ <div class="container">
+  <h2 class="page-header">典籍切換顏色</h2>
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+ </div>
+ <script>
+  // 獲取元素對象
+  let items = document.getElementsByClassName('item')
+
+  // for(var i = 0; i < items.length; i++ ){
+  //  items[i].onclick = function(){
+  //   this.style.background = 'pink';
+  //   item[i].style.background = 'pink';  //因為區域變量沒有所以會看全局變量window.i = 3 ,所以不會有結果
+  //  }
+  // }
+  // console.log(window.i)  //3 變量
+
+  // 修改方式 將 i 改為區域變量
+  for(let i = 0; i < items.length; i++){
+   items[i].onclick = function(){
+      items[i].style.background = 'pink';
+   }
+  }
+
+ </script>
+</body>
+</html>

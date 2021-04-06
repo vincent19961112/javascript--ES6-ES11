@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>函數參數默認值</title>
+</head>
+<body>
+ 
+ <script>
+   //ES6 允許給函數參數的初始值
+   // 1. 形參的初始值，具有默認值得參數，一般位置要靠後(淺規則)
+   // function add(a,b,c=10){
+   //  return a + b + c;
+   // }
+   // let result = add(1,2);
+   // console.log(result);
+   
+   //2. 與解賦值結合
+   function connect({host="127.0.0.1",username,password,port}){
+    console.log(host) //www.google.com
+    console.log(username)  //vincent
+    console.log(password)  //19965438
+    console.log(port)  //3306
+   }
+   connect({
+    host: 'www.google.com',
+    username: 'vincent',
+    password: 19965438,
+    prot: 3306
+   })
+ </script>
+</body>
+</html>

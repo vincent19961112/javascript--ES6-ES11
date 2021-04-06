@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Symbol</title>
+</head>
+<body>
+ 
+ <script>
+  //ES6 引入新的原始數據類型 Symbol，表示獨一無二，他是javascript，語言的第七種數據類型，是一種類似字符串的數據類型
+  //Symbol 特點
+  //Symbol 的值是唯一的，用來解決命名衝突的問題
+  //Symbol 值不能與其他數據進行運算
+  //Symbol 定義的對象屬性不能使用 for...in 循環遍歷，但是可以使用Reflect.ownKeys 來獲取對象的所有鍵名
+
+  //創建symbol
+  let s = Symbol();
+  console.log(s,typeof s);
+  let s2 = Symbol("許鐸鐙");
+  let s3 = Symbol("許鐸鐙");
+  console.log(s2 === s3) //false
+  //Symbol.for 創建
+  let s4 = Symbol.for('許鐸鐙');
+  let s5 = Symbol.for('許鐸鐙');
+  console.log(s4 === s5); //true
+  // 不能與其他數據進行運算
+  // let result = s + 100; //Uncaught TypeError: Cannot convert a Symbol value to a number
+  // let result = s > 100;  //Uncaught TypeError: Cannot convert a Symbol value to a number
+  // let result = s + '100';  //Uncaught TypeError: Cannot convert a Symbol value to a string
+
+  //USONB (七大數據類型) you are so niubility 你好牛逼
+  // u underfined
+  // s string symbol
+  // o object
+  // null number
+  // b boolean
+
+ </script>
+</body>
+</html>

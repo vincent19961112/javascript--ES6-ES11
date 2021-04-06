@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Symbol內置值</title>
+</head>
+<body>
+ 
+ <script>
+  //除了定義自己使用的Symbol值以外，ES6還提供了11個內置的Symbol值，指向語言內部使用的方法。
+  // class Person{
+  //  static [Symbol.hasInstance](param){
+  //   console.log(param)
+  //   console.log('我被用來檢測類型了')
+  //   return true
+  //  }
+  // }
+
+  // let o = {};
+
+  // console.log(o instanceof Person); //可以將instanceof前的值o帶入param，判斷結果由自己決定類型結果true
+
+  const arr = [1,2,3];
+  const arr2 = [4,5,6];
+
+  arr2[Symbol.isConcatSpreadable]= false; //不可展開
+  console.log(arr.concat(arr2)); //[1, 2, 3, Array(3)] ----> [4, 5, 6, Symbol(Symbol.isConcatSpreadable): false]
+
+
+
+ </script>
+</body>
+</html>

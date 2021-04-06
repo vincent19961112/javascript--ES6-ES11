@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>const 定義常量</title>
+</head>
+<body>
+ <script>
+  // 聲明常量
+  const SCHOOL = "虎尾科技大學";
+  //1. 一定要初始化值
+  // const A;
+  // 2. 一般常量使用大寫(淺規則)
+  // const A = 100;
+  //3. 常量的值不會修改
+  //SCHOOL = 'ATGUIGU';
+  //4. 塊兒級作用域
+  // {
+  //  const PLAYER = "UZI";
+  // }
+  // console.log(PLAYER);
+  //5. 對於數組和對象的元素修改，不算做對常量的修改，不會報錯
+  // const TEAM = ['UZI','MXLG','MING','LEtem'];
+  // TEMA.push('Maiko');
+  // TEAM = 100;
+  // 第三點違背了
+  // Uncaught ReferenceError: TEMA is not defined
+ </script>
+</body>
+</html>

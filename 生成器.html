@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>生成器</title>
+</head>
+<body>
+
+ <script>
+  //生成器其實就是一個特殊的函數
+  // 異步編程 純回調函數 node fs ajax mongodb
+  // function * gen(){
+  //  console.log("hello generator")
+  // }
+
+  // let iterator = gen();
+  // console.log(iterator); //gen {<suspended>} 
+   // iterator.next(); //"hello generator"
+  function * gen(){
+   // console.log("111")
+   yield '一隻沒有耳朵';
+   // console.log("222")
+   yield '一隻沒有尾巴';
+   // console.log("333")
+   yield '真奇怪';
+   // console.log("444")
+  }
+
+  let iterator = gen();
+  console.log(iterator.next());  //{value: "一隻沒有耳朵", done: false}
+  console.log(iterator.next());  //{value: "一隻沒有尾巴", done: false}
+  console.log(iterator.next());  //{value: "真奇怪", done: false}
+  console.log(iterator.next());  //{value: undefined, done: true}
+
+
+  // for(let v of gen()){
+  //  console.log(v);  //一隻沒有耳朵 一隻沒有尾巴 真奇怪
+  // }
+
+ </script>
+</body>
+</html>

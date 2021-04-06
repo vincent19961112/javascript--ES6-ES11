@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>模塊字符串</title>
+</head>
+<body>
+ <script>
+   // ES6 引入新的聲明字串的方式 [``] '' ""
+   let str = `我是一個字符串喔!`;
+   console.log(str,typeof str); //我是一個字符串喔! string
+
+   // 內容中可以直接出現換行符
+   let str = `
+   <ul>
+    <li>小名</li>
+    <li>小歌</li>
+    <li>小方</li>
+    <li>小安</li>
+    </ul>
+   `
+   //3. 變量拼接
+   let lovest = '小記';
+   let out = `${lovest}是我心目中最搞笑的演員`;
+   console.log(out)
+ </script>
+</body>
+</html>

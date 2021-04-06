@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Symbol應用</title>
+</head>
+<body>
+ 
+ <script>
+  //向對象中添加方法 up down
+  let game = {
+   name: '俄羅斯方塊',
+   up: function(){},
+   down:function(){},
+  }
+
+  // let methods = {
+  //  up: Symbol(),
+  //  down: Symbol()
+  // };
+
+  // 寫在對象外
+  // game[methods.up] = function(){
+  //  console.log("我可以改變形狀");
+  // }
+  // game[methods.down] = function(){
+  //  console.log("我可以快速下降")
+  // }
+  // console.log(game)
+
+  //寫在對象內
+  let youxi = {
+   name: '狼人殺',
+   [Symbol('say')]: function(){
+    console.log('我可以發言')
+   },
+   [Symbol('zibao')]: function(){
+    console.log('我可以自爆')
+   }
+  }
+  console.log(game)
+
+ </script>
+</body>
+</html>

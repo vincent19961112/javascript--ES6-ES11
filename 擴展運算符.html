@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>擴展運算符</title>
+</head>
+<body>
+
+ <script>
+  // [...] 擴展運算符能將 [數組]轉換為逗號分隔的[參數序列]
+  // 聲明一個數組 ...
+  const tfboys = ['王形凱','王禪','流逝陳'];
+  
+  function chumwan(){
+   console.log(arguments);
+  }
+  chumwan(...tfboys); //chumwan('王形凱','王禪','流逝陳')
+ </script>
+</body>
+</html>

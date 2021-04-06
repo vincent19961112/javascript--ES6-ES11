@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>箭頭函數事件</title>
+</head>
+<style>
+ div{
+  width: 200px;
+  height: 200px;
+  background: #58a;
+ }
+</style>
+<body>
+ <div id="ad"></div>
+ <script>
+  // 需求一 點擊 div 2s 後顏色變成[粉色]
+  // let ad = document.getElementById('ad');
+  //綁定事件
+  // ad.addEventListener("click",function(){
+   // let _this = this;
+   // setTimeout(function(){
+    // this.style.background = 'pink'; //this 指向window  //Uncaught TypeError: Cannot set property 'background' of undefined
+    // _this.style.background = 'pink';
+   // }, 2000)
+   // setTimeout(() => {
+    // this.style.background = 'pink';
+   // }, 2000);
+  // })
+  // 需求二 從數組中返回偶數的元素
+  const arr = [1,6,9,10,100,25];
+  // const result = arr.filter(function(item){
+  //  if(item % 2 === 0){
+  //   return true;
+  //  }else{
+  //   return false;
+  //  }
+  // })
+  // console.log(result) //[6,10,100]
+  // const result = arr.filter(item=>{
+  //  if(item % 2 === 0){
+  //   return true;
+  //  }
+  // })
+  // console.log(result) //[6, 10, 100]
+  // const result = arr.filter(item => item % 2 === 0)
+  // console.log(result) //[6, 10, 100]
+
+  // 箭頭函數適合與 this 無關的回調。 定時器，數組的方法回調
+  // 箭頭函數不適合與 this 有關的回調。 DOM事件回調，對象的方法
+ // let abc = {
+ //   name:'vincent',
+ //   getName:function(){
+ //    console.log("this name", this.name)
+ //   },
+ //   getName1:()=>{
+ //    console.log("this name", this.name)
+ //   }
+ // }
+ // abc.getName() //this name vincent
+ // abc.getName1() //this name 
+ </script>
+</body>
+</html>

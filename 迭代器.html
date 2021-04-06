@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>迭代器</title>
+</head>
+<body>
+
+
+ <script>
+  // iterator 簡單說(對象中的一個屬性Symbol.iterator)
+  //迭代器(iterator)是一種接口，為各種不同的數據結構提供統一的訪問機制。任何數據結構只要部屬 iterator 接口，就可以完成遍歷操作。
+  // 1) ES6創造了一種新的遍歷命令for...of循環，iterator接口主要供for...of消費
+  // 2) 原生具備iterator 接口的數據(可用 for of 遍歷)
+   // a) Array
+   // b) Arguments
+   // c) Set
+   // d) Map
+   // e) String
+   // f) TypedArray
+   // g) NodeList
+  // 3)工作原理
+   // a)創建一個指針對象，指向當前數據結構起始位置
+   // b)第一次調用對象的 next 方法，指針自動指向數據結構的第一個成員
+   // c)接下來不斷調用next方法，指針一直往后移動，直到指向最後一個成員
+   // d)每調用 next 方法返回一個包含 value 和 done 屬性的對象
+
+   const xiyou = ['唐僧','孫悟空','豬八戒','沙僧'];
+   // 使用for...of 遍歷數組
+   // for(let v of xiyou){
+   //  console.log(v)  //'唐僧','孫悟空','豬八戒','沙僧' //輸出鍵值
+   // }
+   // for(let v in xiyou){
+   //  console.log(v)  //0,1,2,3 //輸出鍵名
+   // }
+
+   let iterator = xiyou[Symbol.iterator]();
+
+   //調用對象next方法
+   console.log(iterator.next());
+   console.log(iterator.next());
+   console.log(iterator.next());
+   console.log(iterator.next());
+   console.log(iterator.next());
+ </script>
+</body>
+</html>
